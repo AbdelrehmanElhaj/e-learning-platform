@@ -1,0 +1,15 @@
+
+sudo mysql -u root -p
+
+# Inside MySQL shell:
+CREATE DATABASE e_learning_platform;
+CREATE USER 'elearning_user'@'localhost' IDENTIFIED BY 'secure_password';
+GRANT ALL PRIVILEGES ON e_learning_platform.* TO 'elearning_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+# Test the new user (Optional):
+mysql -u elearning_user -p
+
+# Inside MySQL shell (as new user):
+USE e_learning_platform;
